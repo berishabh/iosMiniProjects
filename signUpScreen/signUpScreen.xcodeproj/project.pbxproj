@@ -11,8 +11,9 @@
 		558D19042A08251D00422D3A /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D19032A08251D00422D3A /* SceneDelegate.swift */; };
 		558D19062A08251D00422D3A /* HomeScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D19052A08251D00422D3A /* HomeScreen.swift */; };
 		558D190B2A08251E00422D3A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 558D190A2A08251E00422D3A /* Assets.xcassets */; };
-		558D190E2A08251E00422D3A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 558D190C2A08251E00422D3A /* LaunchScreen.storyboard */; };
 		558D19162A08361100422D3A /* CreateAccountScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 558D19152A08361100422D3A /* CreateAccountScreen.swift */; };
+		55E965FE2A1CDBC8002CC2E4 /* bankDetailsScreen.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E965FD2A1CDBC8002CC2E4 /* bankDetailsScreen.swift */; };
+		55E966002A1CF8B5002CC2E4 /* UIImage+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E965FF2A1CF8B5002CC2E4 /* UIImage+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,9 +22,10 @@
 		558D19032A08251D00422D3A /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
 		558D19052A08251D00422D3A /* HomeScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeScreen.swift; sourceTree = "<group>"; };
 		558D190A2A08251E00422D3A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		558D190D2A08251E00422D3A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		558D190F2A08251E00422D3A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		558D19152A08361100422D3A /* CreateAccountScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountScreen.swift; sourceTree = "<group>"; };
+		55E965FD2A1CDBC8002CC2E4 /* bankDetailsScreen.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bankDetailsScreen.swift; sourceTree = "<group>"; };
+		55E965FF2A1CF8B5002CC2E4 /* UIImage+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -59,9 +61,10 @@
 				558D19012A08251D00422D3A /* AppDelegate.swift */,
 				558D19032A08251D00422D3A /* SceneDelegate.swift */,
 				558D19052A08251D00422D3A /* HomeScreen.swift */,
+				55E965FF2A1CF8B5002CC2E4 /* UIImage+Extension.swift */,
+				55E965FD2A1CDBC8002CC2E4 /* bankDetailsScreen.swift */,
 				558D19152A08361100422D3A /* CreateAccountScreen.swift */,
 				558D190A2A08251E00422D3A /* Assets.xcassets */,
-				558D190C2A08251E00422D3A /* LaunchScreen.storyboard */,
 				558D190F2A08251E00422D3A /* Info.plist */,
 			);
 			path = signUpScreen;
@@ -125,7 +128,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				558D190E2A08251E00422D3A /* LaunchScreen.storyboard in Resources */,
 				558D190B2A08251E00422D3A /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -139,23 +141,14 @@
 			files = (
 				558D19062A08251D00422D3A /* HomeScreen.swift in Sources */,
 				558D19162A08361100422D3A /* CreateAccountScreen.swift in Sources */,
+				55E965FE2A1CDBC8002CC2E4 /* bankDetailsScreen.swift in Sources */,
+				55E966002A1CF8B5002CC2E4 /* UIImage+Extension.swift in Sources */,
 				558D19022A08251D00422D3A /* AppDelegate.swift in Sources */,
 				558D19042A08251D00422D3A /* SceneDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
-
-/* Begin PBXVariantGroup section */
-		558D190C2A08251E00422D3A /* LaunchScreen.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				558D190D2A08251E00422D3A /* Base */,
-			);
-			name = LaunchScreen.storyboard;
-			sourceTree = "<group>";
-		};
-/* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
 		558D19102A08251E00422D3A /* Debug */ = {
