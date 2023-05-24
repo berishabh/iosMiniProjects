@@ -1,10 +1,3 @@
-//
-//  AppDelegate.swift
-//  quizAppUIKit
-//
-//  Created by Rishabh  Kumar on 06/05/23.
-//
-
 import UIKit
 
 @main
