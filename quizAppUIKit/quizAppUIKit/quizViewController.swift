@@ -1,5 +1,3 @@
-import UIKit
-
 struct QuizQuestion {
     let question: String
     let options: [String]
@@ -16,14 +14,33 @@ let quiz = [
     QuizQuestion(question: "What is the name of the largest animal that ever lived?", options: ["Blue whale", "Tyrannosaurus rex"], answer: "Blue whale"),
 ]
 
+import UIKit
+
 class QuizViewController : UIViewController{
+    
+    var questionIndex = 0
+    
+    @objc func checkAnswer(sender: UIButton) {
+      let userAnswer = sender.title(for: .normal)
+      let correctAnswer = quiz[questionIndex].answer
+      if userAnswer == correctAnswer {
+        print("Correct!")
+        questionIndex+=1
+          updateUI()
+      } else {
+        print("Wrong!")
+      }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         self.view.backgroundColor = UIColor.white
         
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
         let questionLabel = UILabel()
-//        questionLabel.text = quiz[1].question
         questionLabel.font = UIFont.systemFont(ofSize: 40)
         questionLabel.textColor = .systemBrown
         questionLabel.textAlignment = .center
@@ -53,12 +70,11 @@ class QuizViewController : UIViewController{
         ])
 
         let optionOneButton = UIButton()
-//        optionOneButton.setTitle(quiz[1].options[0], for: .normal)
         optionOneButton.setTitleColor(.white, for: .normal)
         optionOneButton.backgroundColor = .systemBrown
         optionOneButton.titleLabel?.textAlignment = .center
         optionOneButton.layer.cornerRadius = 25
-        
+        optionOneButton.addTarget(self, action: #selector(checkAnswer(sender: )), for: .touchUpInside)
         
         optionOneButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(optionOneButton)
@@ -70,11 +86,11 @@ class QuizViewController : UIViewController{
         ])
 
         let optionTwoButton = UIButton()
-        //      optionTwoButton.setTitle(quiz[1].options[1], for: .normal)
         optionTwoButton.setTitleColor(.white, for: .normal)
         optionTwoButton.backgroundColor = .systemBrown
         optionTwoButton.titleLabel?.textAlignment = .center
         optionTwoButton.layer.cornerRadius = 25
+        optionTwoButton.addTarget(self, action: #selector(checkAnswer(sender: )), for: .touchUpInside)
         optionTwoButton.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(optionTwoButton)
         NSLayoutConstraint.activate([
@@ -83,16 +99,20 @@ class QuizViewController : UIViewController{
             optionTwoButton.topAnchor.constraint(equalToSystemSpacingBelow: optionOneButton.topAnchor, multiplier: 15),
             optionTwoButton.centerXAnchor.constraint(equalTo: view.centerXAnchor)
         ])
-
-        func updateUI() {
-          questionLabel.text = quiz[6].question
-          // Set the option buttons titles to the current options
-          optionOneButton.setTitle(quiz[6].options[0], for: .normal)
-          optionTwoButton.setTitle(quiz[6].options[1], for: .normal)
-          // Set the progress view progress to the current progress
-          questionProgressView.progress = 7 / Float(quiz.count)
-        }
         
+        func updateUI(){
+            if questionIndex < quiz.count{
+                questionLabel.text = quiz[questionIndex].question
+                optionOneButton.setTitle(quiz[questionIndex].options[0], for: .normal)
+                optionTwoButton.setTitle(quiz[questionIndex].options[1], for: .normal)
+                questionProgressView.progress =  Float(questionIndex + 1) / Float(quiz.count)
+            }
+            else{
+                print("You completed the quiz")
+            }
+        }
+
         updateUI()
+        
     }
 }
